@@ -1,0 +1,21 @@
+@startuml
+skinparam WrapWidth 120
+left to right direction
+package "Authorization" {
+    usecase "Đăng nhập" as uc1
+    usecase "Đăng kí" as uc2
+    usecase "Lấy lại mật khẩu" as uc3
+    usecase "Quên mật khẩu" as uc4
+    usecase "Nhận lại mật khẩu qua mail" as uc5
+    uc4 ..> uc5 : extend
+}
+"Sinh viên" as student
+"Giáo viên" as teacher
+"User" as user
+student --|> user
+teacher --|> user
+user --> uc1
+user --> uc2
+user --> uc3
+user --> uc4
+@enduml

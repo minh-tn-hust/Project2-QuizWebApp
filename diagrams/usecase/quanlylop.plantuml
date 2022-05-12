@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+skinparam WrapWidth 120
+
+package "Quản lý lớp" {
+    usecase "Lựa chọn câu hỏi cho lớp" as uc1
+    usecase "Giới hạn sinh viên được tham dự" as uc2
+    usecase "Import thông qua email bằng file Excel" as uc3
+    usecase "Thêm lần lượt email của sinh viên" as uc4
+    usecase "Tạo các kì thi gắn với lớp" as uc5
+}
+
+"Giáo viên" as teacher
+teacher --> uc1
+teacher --> uc2
+uc2 ..> uc3 : extend
+uc2 ..> uc4 : extend
+teacher --> uc5
+
+@enduml

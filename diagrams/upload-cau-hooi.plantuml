@@ -1,0 +1,23 @@
+@startuml
+skinparam defaultTextAlignment center
+skinparam wrapWidth 150 
+
+:Thực hiện upload đề thi;
+:Vào UI của trang upload đề thi;
+if (Thực hiện import đề thi) then (**yes**)
+    :Chọn file upload (file excel hoặc csv);
+    :Hiển thị các giao diện các câu hỏi được lấy từ file upload (vẫn hiển thị nếu như giao diện của câu hỏi đó trong file upload không đúng như ý người dùng);
+    :Người dùng thực hiện chỉnh sửa các câu hỏi chưa vừa ý;
+elseif (Thực hiện lựa chọn trong cơ sở dữ liệu) then (**yes**) 
+    :Loading cơ sở dữ liệu mẫu ( cơ sỡ dữ liệu mà người đó đã từng thêm vào);
+    :Lựa chọn câu hỏi muốn thêm vào tập đề hiện tại;
+    :Hiển thị giao diện câu hỏi đã được thêm và người dùng thực hiện chỉnh sửa;
+elseif (Thêm câu hỏi bằng tay) then (**yes**) 
+    :Hiển thị giao diện thêm câu hỏi bằng tay;
+    :Người dùng thực hiện thêm các lựa chọn;
+endif
+:Người dùng lưu đề thi;
+:Hệ thống thực hiện lưu lại các câu hỏi có trong đề thi;
+end
+
+@enduml

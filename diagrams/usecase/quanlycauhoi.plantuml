@@ -1,0 +1,19 @@
+@startuml
+skinparam WrapWidth 100
+left to right direction
+package "Quản lý câu hỏi" {
+    usecase "Thêm/sửa/xóa câu hỏi" as uc1
+    usecase "Import câu hỏi" as uc2
+    usecase "Phân loại các câu hỏi" as uc3
+    usecase "Xuất file định dạng cho các câu hỏi" as uc4
+    usecase "Lựa chọn tập các câu hỏi" as uc5
+    uc4 ..> uc5 : extend
+    uc1 ..> uc2 : extend
+}
+
+
+"Giáo viên" as teacher
+teacher --> uc1
+teacher --> uc3
+teacher --> uc4
+@enduml

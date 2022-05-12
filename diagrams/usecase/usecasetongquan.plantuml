@@ -1,0 +1,23 @@
+@startuml
+skinparam WrapWidth 120
+left to right direction
+package "Hệ thống" {
+    usecase "Tham gia lớp" as uc6
+    usecase "Làm các bài thi có trong lớp hiện tại" as uc1
+    usecase "Quản lý câu hỏi" as uc2
+    usecase "Quản lý lớp (phòng thi)" as uc3
+    usecase "Authorization" as uc4
+}
+
+"Sinh viên" as student
+"Giáo viên" as teacher
+
+teacher --> uc3
+teacher --> uc4
+teacher --> uc2
+student --> uc4
+student --> uc6
+uc6 ..> uc1: extend
+
+
+@enduml
