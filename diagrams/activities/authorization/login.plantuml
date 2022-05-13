@@ -1,0 +1,18 @@
+@startuml
+skinparam WrapWidth 120
+skinparam DefaultTextAlignment center
+
+start
+:Người dùng truy cập ứng dụng;
+:Người dùng chọn phương thức đăng nhập tài khoản;
+:Người dùng nhập tài khoản và chọn lệnh đăng nhập;
+#abfffe:Hệ thống xác thực thông tin đăng nhập thành công và cho phép người dùng truy cập ứng dụng;
+#abfffe:if (Xác nhận thành công) then (yes)
+    #abfffe:Hệ thống ghi nhận hoạt động đăng nhập thành công;
+    :Thực hiện sử dụng App;
+else 
+    #abfffe:Hiển thị thống báo đăng nhập thất bại;
+    :Người dùng thực hiện lấy lại mật khẩu;
+endif
+end
+@enduml

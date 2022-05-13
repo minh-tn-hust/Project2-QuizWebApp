@@ -7,6 +7,7 @@ package "Quản lý câu hỏi" {
     usecase "Phân loại các câu hỏi" as uc3
     usecase "Xuất file định dạng cho các câu hỏi" as uc4
     usecase "Lựa chọn tập các câu hỏi" as uc5
+    usecase "Tạo tập đề thi" as uc6
     uc4 ..> uc5 : extend
     uc1 ..> uc2 : extend
 }
@@ -16,4 +17,5 @@ package "Quản lý câu hỏi" {
 teacher --> uc1
 teacher --> uc3
 teacher --> uc4
+teacher --> uc6
 @enduml
